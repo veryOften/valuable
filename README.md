@@ -1,2 +1,2 @@
-# errorBoundaryEx
-Created with CodeSandbox
+# valuable
+code for practice to do 
