@@ -12,6 +12,8 @@ export default function Bomb({ username }) {
       <Link to="/greeting">greeting</Link>
       <br />
       <Link to="/farewell">farewell</Link>
+      <br />
+      <Link to="/lazyInitialization">lazyInitialization</Link>
     </div>
   );
 }
