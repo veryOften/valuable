@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 
 function LazyInitializationEx1() {
   const [count, setCount] = useState(() => 0);
@@ -14,11 +14,19 @@ const doSomethingAsync = async () => {
 
 function LazyInitializationEx2() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    return () => {
+      clearInterval(doSomethingAsync);
+    };
+  }, []);
+
   const increment = async () => {
     await doSomethingAsync();
     // setCount(count + 1);
     setCount((previousCount) => previousCount + 1);
   };
+
   return <button onClick={increment}>{count}</button>;
 }
 
