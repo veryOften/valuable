@@ -23,7 +23,6 @@ function LazyInitializationEx2() {
 
   const increment = async () => {
     await doSomethingAsync();
-    // setCount(count + 1);
     setCount((previousCount) => previousCount + 1);
   };
 
